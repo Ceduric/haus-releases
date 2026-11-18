@@ -1,0 +1,124 @@
+haus 0.30.0 with manifest v0.107  ·  a test version
+Cedric Niederhaus · Studio Niederhaus
+
+haus is a Mac app that holds Studio Niederhaus's tools. This test version opens one of them:
+manifest: camera reports, contact sheets and selects from DaVinci Resolve.
+showgrid, showroom and lookbook are shown greyed out on haus's first page: not in this version.
+
+You need: a Mac with Apple silicon (M1 or newer), macOS 13 or newer, DaVinci Resolve Studio.
+
+
+INSTALL
+  1. Drag haus onto Applications (in this window).
+  2. If Resolve has never been opened on this Mac: open it once and quit it. haus puts the tools'
+     scripts into Resolve's own folder, which Resolve makes on its first start.
+  3. Open haus from Applications. It is signed and checked by Apple, so it opens like any app.
+     The first time, haus asks for your key: paste the one Cedric sent you (it starts with
+     HAUS-). It carries your name and works until the date it shows in haus ▸ Key; two weeks
+     before, haus reminds you, and a new key goes in through haus ▸ Enter a New Key…
+  4. Restart Resolve. Under Workspace ▸ Scripts you'll find:
+       Manifest - Grab Still      one still at the frame you're on (bind it to G: DaVinci Resolve ▸
+                                  Keyboard Customization, search "Manifest - Grab Still")
+       Manifest - Send all        one still per clip + the clips' metadata, into the job folder
+                                  (bind it to ⇧⌘M)
+       Manifest ▸ Refresh grades  the same, every still grabbed again with the current grade
+       Manifest ▸ Apply logs      the day's Livegrade / ZoeLog logs into the clips (see THE DAY'S LOGS)
+       haus                       the haus panel: every script in one window, and the logs folder
+     haus copies these at every start and replaces them when a new haus brings new ones. They keep
+     working when haus is closed. Nothing to set in Resolve's preferences: the scripts run from
+     Resolve's own menu (External scripting can stay as it is).
+  5. The first time a script finishes, macOS asks whether "haus" may send notifications: Allow.
+     From then on each script ends with a banner from haus, also when haus is closed.
+
+
+THE MAIN FOLDER
+  Everything lives in one folder, with a folder per job (one per Resolve project):
+       Movies/haus/                        the main folder (in your home folder)
+         <Resolve project name>/           one job; its own READ ME.txt says what each part is
+           READ ME.txt
+           project.json                    which Resolve project it is
+           clips.json                      what the day's logs say (Manifest - Apply logs)
+           manifest/                       what Send all writes (stills, manifest.json)
+           manifest/report/                your report: text, settings, stills, cover, logo
+           wrap/<date>/                    where Wrap's save window starts
+         manifest backups/                 what Back up writes
+  To use another folder: at the bottom of haus's first page, Main folder ▸ Change… The scripts
+  follow on their next run. To move it: move it in the Finder, then choose it once in haus.
+  Rename a job folder as you like, but keep it directly in the main folder: a job folder moved
+  into a subfolder, or out of the main folder, isn't found until you move it back.
+  Your reports are files in this folder from the first minute. Nothing is kept in a browser.
+
+
+TRY IT (on a throwaway Resolve project first)
+  1. In Resolve: open a timeline. Optionally, on the Color page, park on a frame and run Grab Still
+     (Send all takes the middle of every clip that has none).
+  2. Workspace ▸ Scripts ▸ Manifest - Send all.
+  3. In haus: click manifest. New project ▸ pick the job (named after the Resolve project).
+     Add / sync stills ▸ choose that job's "manifest" folder. Each clip gets a row.
+  4. Type shots and remarks. Wrap ▸ tick what you want ▸ Wrap: haus asks where to save, starting
+     in the job's wrap/<date> folder. One file is saved as it is; two or more as one zip.
+  5. Quit haus and open it again: the report is still in the library.
+
+  Camera letters come from the names of Resolve's bins (A CAM, CAM B, B-CAM, ...). A bin whose name
+  starts with _ (like _REFERENCES) is left out of the report. Any other bin without a letter in its
+  name, like GRAPHICS, gets the next free letter and shows up as an extra camera: rename it to
+  _GRAPHICS, or leave it out in manifest: Setup ▸ Camera bins ▸ Exclude.
+
+  Back up (in the library) writes a zip of every report into "manifest backups", checked file by
+  file. Restore puts a backup back; it never writes over a report you have, it puts it beside it.
+
+
+THE DAY'S LOGS (Livegrade, ZoeLog, reference stills)
+  Keep each day's exports in one folder per day inside a logs folder for the job: the Livegrade
+  CSV, the ZoeLog CSV (optional) and Livegrade's reference stills (REF_STILLS).
+  In manifest: Add / sync stills ▸ choose that folder. A window shows what came in and the few
+  clips to check (a take ZoeLog didn't log, a mislated one); tick the ones you've checked and
+  press Apply. Livegrade gives scene and take, ZoeLog circled takes, notes and restricted.
+  In Resolve: Workspace ▸ Scripts ▸ Manifest ▸ Apply logs fills the clips' fields where they're
+  still empty (circled takes as Tag: Good Take), adds the hero markers and makes one timeline,
+  "Scene order V1", every clip A to Z, restricted clips on video 2. Run it again after a new day:
+  a new version of the timeline only when its clips changed.
+  Or without manifest: in the haus panel (Workspace ▸ Workflow Integrations ▸ haus, or Workspace ▸ Scripts ▸ haus; its manifest page), Logs ▸
+  Choose… the logs folder, Review, Apply.
+
+
+THE CHECK
+  Are the client drives the same, and does every clip have a daily? On haus's first page the day band
+  has a Check field; click it (or Job ▸ Check the Day). Choose the copies of the camera originals
+  (the job's folder on each drive, or the drives themselves; the first is the reference) and the
+  dailies folder, or drop the drives onto the window. haus looks every minute: names and sizes,
+  the copy app's MHL hashes (ASC MHL or MHL) compared between copies; Verify… reads every file once
+  (about half an hour for 2 TB a drive). A gap is the one red thing on the page; a folder on the
+  reference that isn't a roll (stills, _OLD) can be left out with a click on its column. haus only
+  reads the drives: it never writes, moves, renames or deletes anything on them.
+
+
+THE SETTINGS FILE
+  haus keeps its few settings (where the main folder is, the studio and DIT names) in
+       ~/Library/Application Support/haus/settings.json
+  The Resolve scripts read it too. Leave it there. Deleted, the main folder goes back to
+  Movies/haus; nothing else is lost.
+
+
+A NEW VERSION
+  haus looks for one once a day and tells you ("A new version of haus is available"). Nothing
+  changes until you click Install Update; haus then quits, replaces itself and opens again, so do it
+  between jobs, not while someone is looking at an iPad. To look now: haus ▸ Check for Updates…
+  Your reports and files stay (they're in the main folder or where you put them); the Resolve
+  scripts update themselves at the next start.
+
+
+SOMETHING WRONG? TELL CEDRIC
+  Write what you did, what you expected and what happened, and add:
+    - haus's version (haus ▸ About haus), your Resolve version and the cameras on the job
+    - a screenshot
+    - for a script: Resolve's console (Workspace ▸ Console), a screenshot of its last lines
+    - haus's logs: in haus, Tools ▸ Show Logs opens the folder in the Finder. Zip it (go up one
+      level, right-click the "haus" folder ▸ Compress) and attach it. It holds no footage and no
+      reports (only the names of folders, such as your job folders).
+
+
+TO REMOVE IT
+  Drag haus from Applications to the Trash. The Resolve scripts are in
+       ~/Library/Application Support/Blackmagic Design/DaVinci Resolve/Fusion/Scripts/Utility/
+  (the "Showgrid - " and "Manifest - " files and haus.py). Your main folder and files stay where they are.

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>haus (manifest)</title>
+    <item>
+      <title>0.30.0 · manifest v0.107</title>
+      <pubDate>Tue, 17 Nov 2026 20:14:32 -0500</pubDate>
+      <sparkle:version>202611172013</sparkle:version>
+      <sparkle:shortVersionString>0.30.0 · manifest v0.107</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<p>haus 0.30.0 with manifest v0.107</p><p>The first version that updates itself and opens with your key.</p>]]></description>
+      <enclosure url="https://raw.githubusercontent.com/Ceduric/haus-releases/main/manifest/haus-0.30.0-manifest-v0.107-202611172013.dmg" length="2598690" type="application/octet-stream" sparkle:edSignature="5Hlq2+MDeskg1ucQRzIWKHKUbud/lPMD5tEFxgtBi6qQjyUJAuJ2nvgOyVQvYWBPJkeNA4E/QVoA6BacuquQCw=="/>
+    </item>
+  </channel>
+</rss>
