@@ -1,0 +1,2 @@
+# haus keys switched off before their date (ids only). haus reads this once a day.
+8796553d  2026-11-17
