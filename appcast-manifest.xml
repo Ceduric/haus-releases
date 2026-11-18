@@ -3,6 +3,15 @@
   <channel>
     <title>haus (manifest)</title>
     <item>
+      <title>0.31.3 · manifest v0.118</title>
+      <pubDate>Wed, 18 Nov 2026 18:40:24 -0500</pubDate>
+      <sparkle:version>202611181839</sparkle:version>
+      <sparkle:shortVersionString>0.31.3 · manifest v0.118</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<p>haus 0.31.3 with manifest v0.118</p><p>manifest v0.118: good-take circles and hearts beside the thumbnail; Report per camera in the Wrap (one PDF per camera); Phantom .cine clips get their metadata; clips with the same name (a prelight card) each get their own row; only a good take prints its circle; safety fixes. haus 0.31.3: the tool switcher never prints into a PDF.</p>]]></description>
+      <enclosure url="https://raw.githubusercontent.com/Ceduric/haus-releases/main/manifest/haus-0.31.3-manifest-v0.118-202611181839.dmg" length="2642733" type="application/octet-stream" sparkle:edSignature="MLtT2cDhyXnaz/DEFOWSskibROp1NzmEbnWAXQf2YAOXW2n3zSnZ+tglxJa2+BvcwGNKg6LGUKWaK0SctK/hBQ=="/>
+    </item>
+    <item>
       <title>0.30.0 · manifest v0.107</title>
       <pubDate>Tue, 17 Nov 2026 20:14:32 -0500</pubDate>
       <sparkle:version>202611172013</sparkle:version>

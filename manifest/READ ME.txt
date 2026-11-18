@@ -1,4 +1,4 @@
-haus 0.30.0 with manifest v0.107  ·  a test version
+haus 0.31.3 with manifest v0.118  ·  a test version
 Cedric Niederhaus · Studio Niederhaus
 
 haus is a Mac app that holds Studio Niederhaus's tools. This test version opens one of them:
